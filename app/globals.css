@@ -4,6 +4,14 @@
 
 /* ========================================== TAILWIND STYLES */
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply text-light-200;
+  }
+
   /* Remove scrollbar */
   .remove-scrollbar::-webkit-scrollbar {
     width: 0px;

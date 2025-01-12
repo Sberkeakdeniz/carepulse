@@ -9,6 +9,9 @@ const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
+  preload: true,
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
 });
 
 export const metadata: Metadata = {
@@ -23,20 +26,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-      
       <body
         className={cn(
-          "min-h-screen bg-dark-300 font-sans antialiased",
+          "min-h-screen bg-dark-300 font-sans antialiased text-light-200",
           fontSans.variable
         )}
       >
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-          >
-            {children}
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
